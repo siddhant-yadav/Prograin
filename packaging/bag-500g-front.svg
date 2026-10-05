@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 160 250" width="160mm" height="250mm" role="img" aria-label="ProGrain Protein Roti Mix 500 g pouch, front">
+<title>ProGrain Protein Roti Mix 500 g pouch, front</title><style>@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,300..800&amp;family=Hanken+Grotesk:wght@400;500;600;700&amp;display=swap');</style>
+<defs>
+<linearGradient id="sagef" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#97A283"/><stop offset="1" stop-color="#8A9576"/></linearGradient>
+<linearGradient id="creamf" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F8F1E0"/><stop offset="1" stop-color="#F4ECD8"/></linearGradient>
+</defs>
+<rect width="160" height="250" fill="url(#sagef)"/>
+<circle cx="80" cy="124" r="66" fill="#F4ECD8" opacity=".10"/>
+<image href="../assets/logo.png" x="30" y="40" width="100" height="21.9"/>
+<text x="80" y="76" text-anchor="middle" font-family="'Bricolage Grotesque', 'Hanken Grotesk', sans-serif" font-weight="600" font-size="6.6" letter-spacing=".9" fill="#F4ECD8">PROTEIN ROTI MIX</text>
+<text x="80" y="104" text-anchor="middle" font-family="'Bricolage Grotesque', 'Hanken Grotesk', sans-serif" font-weight="800" font-size="16.5" letter-spacing="-.4" fill="#fff">Same roti.</text>
+<text x="80" y="122" text-anchor="middle" font-family="'Bricolage Grotesque', 'Hanken Grotesk', sans-serif" font-weight="800" font-size="16.5" letter-spacing="-.4" fill="#FFC978">3x protein.</text>
+<path d="M0 172 Q80 160 160 172 V250 H0Z" fill="url(#creamf)"/>
+<image href="../assets/wheat-soy.webp" x="26" y="127" width="108" height="58.1" preserveAspectRatio="xMidYMid meet"/>
+<g transform="translate(126 152)"><circle r="15.5" fill="#F5A94A"/><circle r="14" fill="none" stroke="#1B120A" stroke-opacity=".35" stroke-width=".4" stroke-dasharray="1 1"/>
+<text y="1.6" text-anchor="middle" font-family="'Bricolage Grotesque', 'Hanken Grotesk', sans-serif" font-weight="800" font-size="8.4" fill="#1B120A">500 g</text><text y="6.4" text-anchor="middle" font-family="'Hanken Grotesk', sans-serif" font-weight="700" font-size="2.7" letter-spacing=".3" fill="#1B120A">NET WT.</text></g>
+<rect x="9.5" y="190" width="44" height="17" rx="8.5" fill="#fff" stroke="#8A9576" stroke-width=".5"/><text x="31.5" y="196.6" text-anchor="middle" font-family="'Bricolage Grotesque', 'Hanken Grotesk', sans-serif" font-weight="700" font-size="3.9" fill="#5E6B52">Just wheat</text><text x="31.5" y="201.6" text-anchor="middle" font-family="'Bricolage Grotesque', 'Hanken Grotesk', sans-serif" font-weight="700" font-size="3.9" fill="#5E6B52">&amp; soy</text><rect x="58.0" y="190" width="44" height="17" rx="8.5" fill="#fff" stroke="#8A9576" stroke-width=".5"/><text x="80.0" y="196.6" text-anchor="middle" font-family="'Bricolage Grotesque', 'Hanken Grotesk', sans-serif" font-weight="700" font-size="3.9" fill="#5E6B52">All 9 essential</text><text x="80.0" y="201.6" text-anchor="middle" font-family="'Bricolage Grotesque', 'Hanken Grotesk', sans-serif" font-weight="700" font-size="3.9" fill="#5E6B52">amino acids</text><rect x="106.5" y="190" width="44" height="17" rx="8.5" fill="#fff" stroke="#8A9576" stroke-width=".5"/><text x="128.5" y="196.6" text-anchor="middle" font-family="'Bricolage Grotesque', 'Hanken Grotesk', sans-serif" font-weight="700" font-size="3.9" fill="#5E6B52">No whey, no sugar,</text><text x="128.5" y="201.6" text-anchor="middle" font-family="'Bricolage Grotesque', 'Hanken Grotesk', sans-serif" font-weight="700" font-size="3.9" fill="#5E6B52">no preservative</text>
+<text x="80" y="219" text-anchor="middle" font-family="'Bricolage Grotesque', 'Hanken Grotesk', sans-serif" font-weight="700" font-size="5.2" fill="#744A16">Add to your atta before kneading. That's it.</text>
+<g transform="translate(18 224.5)"><rect width="6" height="6" fill="#fff" stroke="#0A7A32" stroke-width="0.54"/><circle cx="3.0" cy="3.0" r="1.62" fill="#0A7A32"/></g>
+<text x="142" y="229.4" text-anchor="end" font-family="'Hanken Grotesk', sans-serif" font-weight="600" font-size="3.6" fill="#1B120A">Resealable pouch</text>
+<g id="guides" display="none" fill="none" stroke="#E5007E" stroke-width=".25" stroke-dasharray="1.2 1">
+<rect x="0.1" y="0.1" width="159.8" height="249.8"/><rect x="8" y="14" width="144" height="222"/></g>
+</svg>

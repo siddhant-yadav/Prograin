@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>ProGrain packaging concept</title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,300..800&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root { --ink:#1B120A; --soft:#5A4430; --linen:#EFE7D6; --paper:#FBF6EA; --amber:#F5A94A; --sage:#5E6B52; --k: 2.3px; }
+  * { box-sizing: border-box; }
+  body { margin:0; background: var(--linen); color: var(--ink); font-family:'Hanken Grotesk', system-ui, sans-serif; line-height:1.55; }
+  h1,h2,h3 { font-family:'Bricolage Grotesque', sans-serif; margin:0; letter-spacing:-.03em; line-height:1; }
+  .wrap { width:min(1280px, 100% - 40px); margin-inline:auto; }
+  header { padding: 56px 0 24px; }
+  h1 { font-size: clamp(2.4rem, 6vw, 4.6rem); font-weight:800; }
+  header p { max-width: 44em; color: var(--soft); font-size:1.1rem; margin:14px 0 0; }
+  section { padding: 36px 0 48px; }
+  h2 { font-size: clamp(1.6rem, 3.2vw, 2.4rem); font-weight:800; margin-bottom: 8px; }
+  .sub { color: var(--soft); margin: 0 0 24px; max-width: 46em; }
+  .stage { background: radial-gradient(80% 90% at 50% 100%, #FFFDF6, #E4DAC3); border-radius: 32px; padding: 40px 20px 24px; display:flex; flex-wrap:wrap; justify-content:center; align-items:flex-end; gap: 24px 56px; }
+  .stage figure { margin:0; text-align:center; }
+  .stage figcaption { font-family:'Bricolage Grotesque'; font-weight:700; margin-top: 6px; color: var(--soft); }
+  .stage svg { display:block; height:auto; max-width:100%; }
+  .bag svg { width: calc((160 + 28) * var(--k)); } .sachet svg { width: calc((90 + 28) * var(--k)); }
+  .flat-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 28px; align-items:end; }
+  .flat { background: var(--paper); border-radius: 20px; padding: 18px; box-shadow: 0 1px 0 rgba(27,18,10,.08); }
+  .flat svg { display:block; width:100%; height:auto; box-shadow: 0 10px 30px -14px rgba(27,18,10,.5); }
+  .flat h3 { font-size: 1.05rem; font-weight:700; margin-bottom: 10px; }
+  .flat .dl { margin-top: 10px; font-size:.9rem; }
+  .flat a { color: var(--sage); font-weight:600; }
+  .show-guides [id=guides] { display: inline; }
+  label.tog { display:inline-flex; gap:8px; align-items:center; font-weight:600; margin-bottom: 18px; cursor:pointer; }
+  .cols { display:grid; grid-template-columns: repeat(auto-fit, minmax(300px,1fr)); gap: 28px; }
+  .card { background: var(--paper); border-radius: 20px; padding: 24px 26px; }
+  .card h3 { font-size: 1.25rem; font-weight:800; margin-bottom: 12px; }
+  .card ul { margin:0; padding-left: 1.1em; } .card li { margin: 6px 0; }
+  .warn { border-left: 5px solid var(--amber); }
+  footer { padding: 24px 0 64px; color: var(--soft); font-size:.95rem; }
+  @media (max-width: 800px) { :root { --k: 1.6px; } }
+</style>
+</head>
+<body>
+<header class="wrap">
+  <h1>ProGrain packaging, concept v1</h1>
+  <p>Two packs in one family: a 30 g sachet (three-side seal, 90 × 130 mm) and a 500 g resealable stand-up pouch (160 × 250 mm front panel). Sage green from your sample sachet, the logo amber, and your wheat and soy photo. This is concept artwork. The printer's dieline, final colour proofs and the legal text still need to be checked before print.</p>
+</header>
+
+<main class="wrap">
+  <section>
+    <h2>The range</h2>
+    <p class="sub">Shown at true relative size.</p>
+    <div class="stage">
+      <figure class="bag">{{m-bag-front}}<figcaption>500 g pouch, front</figcaption></figure>
+      <figure class="sachet">{{m-sachet-front}}<figcaption>30 g sachet, front</figcaption></figure>
+    </div>
+    <div class="stage" style="margin-top:24px">
+      <figure class="bag">{{m-bag-back}}<figcaption>500 g pouch, back</figcaption></figure>
+      <figure class="sachet">{{m-sachet-back}}<figcaption>30 g sachet, back</figcaption></figure>
+    </div>
+  </section>
+
+  <section id="flat">
+    <h2>Flat artwork</h2>
+    <p class="sub">Each panel is a standalone SVG in millimetres. Tick the box to show the seal margins and safe area (pink dashes). Final files should have text converted to outlines and be rebuilt on your printer's dieline in CMYK with 3 mm bleed.</p>
+    <label class="tog"><input type="checkbox" id="g"> Show seal margins and safe area</label>
+    <div class="flat-grid" id="flats">
+      <div class="flat"><h3>500 g pouch, front</h3>{{bag-500g-front}}<div class="dl"><a href="bag-500g-front.svg" download>Download SVG</a></div></div>
+      <div class="flat"><h3>500 g pouch, back</h3>{{bag-500g-back}}<div class="dl"><a href="bag-500g-back.svg" download>Download SVG</a></div></div>
+      <div class="flat"><h3>30 g sachet, front</h3>{{sachet-30g-front}}<div class="dl"><a href="sachet-30g-front.svg" download>Download SVG</a></div></div>
+      <div class="flat"><h3>30 g sachet, back</h3>{{sachet-30g-back}}<div class="dl"><a href="sachet-30g-back.svg" download>Download SVG</a></div></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="card warn">
+        <h3>Confirm before print</h3>
+        <ul>
+          <li><b>"24g Protein" on the sachet.</b> This comes from your sample. A 30 g sachet giving 24 g of protein would be about 80% protein by weight, which a wheat and soy blend is unlikely to reach. Check whether 24 g means three rotis' worth, and what exactly the claim refers to.</li>
+          <li><b>"3x Protein" and "All 9 essential amino acids".</b> Both are claims. They need lab results and a regulatory check (FSSAI claims rules) before they go on a pack.</li>
+          <li><b>Nutrition table, ingredient percentages, dose and shelf life</b> are blank on purpose. Nothing is invented.</li>
+          <li><b>Legal block:</b> FSSAI licence number, manufacturer and marketer address, MRP, batch, mfg and best-before, customer care, barcode and veg mark. Placeholders are marked in square brackets.</li>
+          <li><b>Allergen line</b> reads wheat (gluten) and soy, as you confirmed no peanut. Add a "may contain" line if the factory handles peanut.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Design choices</h3>
+        <ul>
+          <li><b>One system, two sizes.</b> Sage upper half with the logo, a cream lower half for claims and benefits. The sachet matches your sample; the pouch adds the headline "Same roti. 3x protein." and a 500 g badge.</li>
+          <li><b>Real product photo.</b> The wheat and soy photo sits on the colour split, as on the website.</li>
+          <li><b>Readable at a glance.</b> Brand, then claim, then benefit chips, then the how-to line. Fine print is on the back.</li>
+          <li><b>Pouch details.</b> Zip groove, tear notches and crimped seals are drawn in the mockup so you can judge the look. They are not part of the artwork files.</li>
+          <li><b>Logo note.</b> The logo's brown "Grain" is a little soft on sage. A cream or knocked-out logo version would read better. Worth testing on a printed proof.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Next steps</h3>
+        <ul>
+          <li>Pick the packaging printer and ask for the exact dielines (sachet and zip pouch).</li>
+          <li>Confirm the claims, dose and nutrition numbers with the lab and your FSSAI consultant.</li>
+          <li>After any text change, re-run <code>python3 packaging/build.py</code> from the project folder to rebuild every file on this page.</li>
+          <li>Order a short digital proof run for both packs before the full print.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</main>
+<footer class="wrap">Concept artwork. Not for print until the items above are confirmed.</footer>
+<script>document.getElementById('g').addEventListener('change', e => document.getElementById('flats').classList.toggle('show-guides', e.target.checked));</script>
+</body>
+</html>

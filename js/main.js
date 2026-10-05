@@ -25,9 +25,9 @@
   }));
 
   /* ---------- Waitlist ----------
-     Set WAITLIST_ENDPOINT to a URL that accepts a JSON POST ({ email, source }).
+     Set WAITLIST_ENDPOINT to the Google Apps Script web-app URL (see docs/waitlist-apps-script.gs).
      Until then, signups are only kept in this browser's localStorage (demo mode). */
-  const WAITLIST_ENDPOINT = '';
+  const WAITLIST_ENDPOINT = 'https://script.google.com/macros/s/AKfycbxeVzYWLfC92ts6-ESbSyJX42rCZx8VLli4Y6WCGG7mLy5Quv6d3AFW0CGbAoCk_v2A/exec';
   $$('[data-waitlist]').forEach(form => {
     const input = $('input[type=email]', form);
     const msg = $('.waitlist__msg', form);
@@ -49,11 +49,12 @@
       btn.classList.add('is-loading');
       try {
         if (WAITLIST_ENDPOINT) {
-          const res = await fetch(WAITLIST_ENDPOINT, {
-            method: 'POST', headers: { 'Content-Type': 'application/json' },
+          // Google Apps Script web apps don't send CORS headers, so send a "simple" request and
+          // treat any completed request (no network error) as success. The script validates and de-duplicates.
+          await fetch(WAITLIST_ENDPOINT, {
+            method: 'POST', mode: 'no-cors', headers: { 'Content-Type': 'text/plain;charset=utf-8' },
             body: JSON.stringify({ email, source: form.id })
           });
-          if (!res.ok) throw new Error(String(res.status));
         } else {
           await new Promise(r => setTimeout(r, 500));
           try {

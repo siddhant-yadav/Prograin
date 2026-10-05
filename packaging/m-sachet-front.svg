@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-14 -14 118 166" role="img" aria-label="30 g sachet mockup, front">
+<defs>
+<linearGradient id="edgea" x1="0" x2="1"><stop offset="0" stop-color="#000" stop-opacity=".34"/><stop offset=".10" stop-color="#000" stop-opacity=".06"/><stop offset=".3" stop-color="#fff" stop-opacity=".12"/><stop offset=".5" stop-color="#fff" stop-opacity="0"/><stop offset=".86" stop-color="#000" stop-opacity=".08"/><stop offset="1" stop-color="#000" stop-opacity=".4"/></linearGradient>
+<radialGradient id="pillowa" cx=".4" cy=".42" r=".72"><stop offset="0" stop-color="#fff" stop-opacity=".2"/><stop offset=".6" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".16"/></radialGradient>
+<linearGradient id="sheena" x1="0" x2="1"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".5"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+<pattern id="crimpa" width="1.5" height="2" patternUnits="userSpaceOnUse"><rect width=".75" height="2" fill="#000" opacity=".13"/><rect x=".75" width=".4" height="2" fill="#fff" opacity=".18"/></pattern>
+<pattern id="crimpHa" width="2" height="1.5" patternUnits="userSpaceOnUse"><rect width="2" height=".75" fill="#000" opacity=".1"/><rect y=".75" width="2" height=".4" fill="#fff" opacity=".16"/></pattern>
+<filter id="blura" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="3"/></filter>
+<filter id="blurSa"><feGaussianBlur stdDeviation=".7"/></filter>
+<filter id="graina" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" seed="3"/><feColorMatrix values="0 0 0 0 .3  0 0 0 0 .25  0 0 0 0 .15  0 0 0 .5 -.12"/></filter>
+</defs>
+<ellipse cx="49.0" cy="133" rx="48.6" ry="4.95" fill="#000" opacity=".3" filter="url(#blura)"/>
+<clipPath id="clipa"><path d="M3 0 H87 Q90 0 90 3 V127 Q90 130 87 130 H3 Q0 130 0 127 V3 Q0 0 3 0 Z"/></clipPath>
+<g clip-path="url(#clipa)">
+<title>ProGrain Protein Roti Mix 30 g sachet, front</title><style>@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,300..800&amp;family=Hanken+Grotesk:wght@400;500;600;700&amp;display=swap');</style>
+<defs>
+<linearGradient id="sages" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#97A283"/><stop offset="1" stop-color="#8A9576"/></linearGradient>
+<linearGradient id="creams" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F8F1E0"/><stop offset="1" stop-color="#F4ECD8"/></linearGradient>
+</defs>
+<rect width="90" height="130" fill="url(#sages)"/>
+<circle cx="45" cy="51" r="31" fill="#F4ECD8" opacity=".11"/>
+<image href="../assets/logo.png" x="16" y="12" width="58" height="12.7"/>
+<text x="45" y="31.6" text-anchor="middle" font-family="'Bricolage Grotesque', 'Hanken Grotesk', sans-serif" font-weight="600" font-size="3.7" letter-spacing=".5" fill="#F4ECD8">PROTEIN ROTI MIX</text>
+<image href="../assets/wheat-soy.webp" x="15" y="34" width="60" height="32.3" preserveAspectRatio="xMidYMid meet"/>
+<text x="45" y="76.4" text-anchor="middle" font-family="'Bricolage Grotesque', 'Hanken Grotesk', sans-serif" font-size="8.6" fill="#fff"><tspan font-weight="800">24g</tspan><tspan font-weight="400" dx="1.2">Protein</tspan></text>
+<path d="M0 81 Q45 75 90 81 V130 H0Z" fill="url(#creams)"/>
+<text x="45" y="93.2" text-anchor="middle" font-family="'Bricolage Grotesque', 'Hanken Grotesk', sans-serif" font-size="8.6" fill="#5E6B52"><tspan font-weight="800">3x</tspan><tspan font-weight="400" dx="1.2">Protein</tspan></text>
+<path d="M32 97.6h26" stroke="#F5A94A" stroke-width=".7" stroke-linecap="round"/>
+<text x="45" y="103.4" text-anchor="middle" font-family="'Hanken Grotesk', sans-serif" font-weight="600" font-size="3.1" fill="#1B120A">Just wheat &amp; soy. No whey, no sugar,</text>
+<text x="45" y="107.4" text-anchor="middle" font-family="'Hanken Grotesk', sans-serif" font-weight="600" font-size="3.1" fill="#1B120A">no preservative.</text>
+<text x="45" y="113.2" text-anchor="middle" font-family="'Bricolage Grotesque', 'Hanken Grotesk', sans-serif" font-weight="700" font-size="3.4" fill="#744A16">Add to your atta. Knead. That's it.</text>
+<g transform="translate(9 115.4)"><rect width="4.4" height="4.4" fill="#fff" stroke="#0A7A32" stroke-width="0.396"/><circle cx="2.2" cy="2.2" r="1.1880000000000002" fill="#0A7A32"/></g>
+<text x="81" y="118.8" text-anchor="end" font-family="'Hanken Grotesk', sans-serif" font-weight="600" font-size="3" fill="#1B120A">Net wt. 30 g</text>
+<g id="guides" display="none" fill="none" stroke="#E5007E" stroke-width=".25" stroke-dasharray="1.2 1">
+<rect x="0.1" y="0.1" width="89.8" height="129.8"/><rect x="5" y="7" width="80" height="116"/></g>
+
+<rect width="90" height="130" fill="url(#pillowa)"/>
+<rect width="90" height="130" fill="url(#edgea)"/>
+<rect width="90" height="7" fill="url(#crimpHa)"/><rect y="123" width="90" height="7" fill="url(#crimpHa)"/>
+<rect width="5" height="130" fill="url(#crimpa)" opacity=".55"/><rect x="85" width="5" height="130" fill="url(#crimpa)" opacity=".55"/>
+<rect y="7" width="90" height="1.6" fill="#000" opacity=".16" filter="url(#blurSa)"/><rect y="121.4" width="90" height="1.6" fill="#000" opacity=".16" filter="url(#blurSa)"/>
+<path d="M0 12 l3.4 1.6 -3.4 1.6z" fill="#000" opacity=".3"/>
+<g fill="none" stroke-linecap="round" filter="url(#blurSa)">
+<path d="M5.3999999999999995 39.0 q7.2 5.2 9.0 13.0" stroke="#000" stroke-opacity=".05" stroke-width="1.4"/>
+<path d="M84.6 44.2 q-7.2 5.2 -9.0 13.0" stroke="#000" stroke-opacity=".05" stroke-width="1.4"/>
+<path d="M6.300000000000001 91.0 q8.1 -3.9 10.799999999999999 -11.7" stroke="#000" stroke-opacity=".05" stroke-width="1.4"/>
+<path d="M83.7 93.6 q-8.1 -3.9 -10.799999999999999 -11.7" stroke="#000" stroke-opacity=".05" stroke-width="1.4"/>
+<path d="M12.600000000000001 44.2 q4.5 3.9 6.300000000000001 10.4" stroke="#fff" stroke-opacity=".12" stroke-width=".8"/>
+</g>
+<path d="M23.400000000000002 11 c-5.3999999999999995 39.0 -5.3999999999999995 65.0 0 108" stroke="url(#sheena)" stroke-width="14.4" fill="none" opacity=".42" filter="url(#blura)"/>
+<rect width="90" height="130" filter="url(#graina)" opacity=".4"/>
+</g>
+<path d="M3 0 H87 Q90 0 90 3 V127 Q90 130 87 130 H3 Q0 130 0 127 V3 Q0 0 3 0 Z" fill="none" stroke="#000" stroke-opacity=".28" stroke-width=".5"/>
+</svg>

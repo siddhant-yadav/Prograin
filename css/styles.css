@@ -170,6 +170,7 @@ button, input { font: inherit; color: inherit; }
 .waitlist.is-error .waitlist__msg { color: #FFA48C; }
 .waitlist.is-done .waitlist__msg { color: var(--gold); }
 .waitlist.is-done .waitlist__msg::before { content: '\2713\00a0'; }
+.waitlist__note--light { color: var(--ink); opacity: .8; }
 .waitlist--light input { background: #fff; color: var(--ink); border-color: transparent; }
 .waitlist--light input::placeholder { color: #7A6850; }
 .waitlist--light input:focus-visible { border-color: var(--char); box-shadow: 0 0 0 4px rgba(13, 10, 7, .3); background: #fff; }
