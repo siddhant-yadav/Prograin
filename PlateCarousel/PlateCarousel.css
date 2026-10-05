@@ -1,0 +1,276 @@
+/* =========================================================
+   3D Plate Carousel (A24 CD Edge-to-Edge Linear Scroll)
+   Standalone CSS Styling
+   ========================================================= */
+
+:root {
+    --pc-accent: #C87A1E;
+    --pc-text-dark: #1A1008;
+    --pc-text-muted: #6B5B45;
+    --pc-bg: #F7F4EF;
+    --pc-font: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.lpc-mount {
+    width: 100%;
+    background: transparent;
+    padding: 0 0 0.5rem;
+    overflow: hidden;
+    position: relative;
+    user-select: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: var(--pc-font);
+}
+
+.lpc-scene {
+    width: 100%;
+    perspective: 1200px;
+    position: relative;
+    height: 50vh;
+    min-height: 380px;
+    max-height: 560px;
+    display: flex;
+    align-items: center;
+}
+
+.lpc-track {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    transform-style: preserve-3d;
+    will-change: transform;
+}
+
+.lpc-plate-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 45vh;
+    height: 45vh;
+    min-width: 300px;
+    min-height: 300px;
+    max-width: 480px;
+    max-height: 480px;
+    margin-top: calc(-22.5vh);
+    transform-style: preserve-3d;
+    will-change: transform;
+}
+
+/* 3D Ceramic Plate */
+.lpc-plate {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    border-radius: 50%;
+    transform-style: preserve-3d;
+    background: radial-gradient(circle at 35% 35%, #FFFFFF 0%, #F4F4F4 40%, #E2E2E2 75%, #D0D0D0 100%);
+    box-shadow: 
+        -15px 25px 40px rgba(0, 0, 0, 0.25), 
+        inset 0 2px 5px rgba(255, 255, 255, 0.8), 
+        inset 0 -2px 10px rgba(0, 0, 0, 0.1);
+    border: 2px solid #EFEFEF;
+}
+
+.lpc-food-img {
+    width: 90%;
+    height: 90%;
+    object-fit: cover;
+    border-radius: 50%;
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    box-shadow: inset 0 8px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Info Panel Header */
+.lpc-info-panel {
+    text-align: left;
+    position: relative;
+    min-height: 110px;
+    width: 100%;
+    max-width: 800px;
+    margin: 0.5rem auto 1rem;
+    padding: 0 2rem;
+}
+
+.lpc-info-slide {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    opacity: 0;
+    transform: translateY(15px);
+    pointer-events: none;
+    transition: opacity 0.4s cubic-bezier(0.25, 1, 0.5, 1), transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.lpc-info-text-group {
+    flex: 1;
+}
+
+.lpc-info-slide.active {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.lpc-info-tag {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--pc-accent);
+    background: rgba(200, 122, 30, 0.12);
+    border: 1px solid rgba(200, 122, 30, 0.3);
+    padding: 4px 14px;
+    border-radius: 20px;
+    margin-bottom: 0.5rem;
+}
+
+.lpc-info-title {
+    font-size: clamp(1.6rem, 4vw, 2.2rem);
+    font-weight: 800;
+    color: var(--pc-text-dark);
+    margin: 0;
+    line-height: 1.1;
+}
+
+.lpc-info-portion {
+    font-size: 0.95rem;
+    color: var(--pc-text-muted);
+    margin: 0.2rem 0 0.8rem;
+    font-weight: 500;
+}
+
+.lpc-protein-callout {
+    display: flex;
+    align-items: baseline;
+    gap: 0.8rem;
+    justify-content: flex-end;
+    flex: 1;
+}
+
+.lpc-protein-num {
+    font-size: clamp(3rem, 7vw, 4.5rem);
+    font-weight: 900;
+    line-height: 1;
+    background: linear-gradient(135deg, var(--pc-accent) 0%, #E8A030 50%, var(--pc-accent) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: -0.03em;
+}
+
+.lpc-protein-label {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--pc-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    line-height: 1.3;
+    text-align: left;
+}
+
+/* Controls & Dots */
+.lpc-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.lpc-nav-btn {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 2px solid rgba(200, 122, 30, 0.3);
+    background: #FFFFFF;
+    color: var(--pc-accent);
+    font-size: 1.5rem;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.lpc-nav-btn:hover {
+    background: var(--pc-accent);
+    color: #FFFFFF;
+    border-color: var(--pc-accent);
+    box-shadow: 0 8px 25px rgba(200, 122, 30, 0.4);
+    transform: scale(1.1);
+}
+
+.lpc-dots {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.lpc-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(200, 122, 30, 0.25);
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+    padding: 0;
+}
+
+.lpc-dot:hover {
+    background: rgba(200, 122, 30, 0.6);
+    transform: scale(1.2);
+}
+
+.lpc-dot.active {
+    width: 36px;
+    border-radius: 10px;
+    background: var(--pc-accent);
+    box-shadow: 0 2px 8px rgba(200, 122, 30, 0.4);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .lpc-scene {
+        perspective: 800px;
+        height: 40vh;
+        min-height: 280px;
+    }
+    
+    .lpc-plate-wrapper {
+        width: 35vh;
+        height: 35vh;
+        min-width: 240px;
+        min-height: 240px;
+        margin-top: calc(-17.5vh);
+    }
+    
+    .lpc-info-panel {
+        margin: 0.5rem auto;
+        min-height: 140px;
+    }
+    
+    .lpc-info-slide {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+
+    .lpc-protein-callout {
+        justify-content: flex-start;
+    }
+}

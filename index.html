@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ProGrain · Same roti. 3x protein.</title>
+  <meta name="description"
+    content="ProGrain is a high-protein roti mix you knead into the atta you already use. Join the waitlist for early-bird pricing. No payment needed.">
+  <meta name="theme-color" content="#0D0A07">
+  <link rel="icon" href="assets/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,300..800&family=Hanken+Grotesk:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="PlateCarousel/PlateCarousel.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+  <!-- ============ SVG SPRITE: calculator food icons ============ -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <defs>
+      <linearGradient id="g-egg" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="#F6DDB6" />
+        <stop offset="1" stop-color="#D9A868" />
+      </linearGradient>
+      <linearGradient id="g-steel" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="#F1F3F4" />
+        <stop offset=".5" stop-color="#C3CBD0" />
+        <stop offset="1" stop-color="#8F9AA1" />
+      </linearGradient>
+      <linearGradient id="g-roti" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="#F3D69F" />
+        <stop offset="1" stop-color="#D9A75E" />
+      </linearGradient>
+      <linearGradient id="g-roti-pg" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="#FFD58F" />
+        <stop offset="1" stop-color="#F0932A" />
+      </linearGradient>
+      <symbol id="i-egg" viewBox="0 0 80 100">
+        <ellipse cx="40" cy="94" rx="26" ry="4" fill="#000" opacity=".16" />
+        <path d="M40 4C62 4 74 42 74 62c0 22-16 32-34 32S6 84 6 62C6 42 18 4 40 4Z" fill="url(#g-egg)" />
+        <ellipse cx="27" cy="38" rx="6" ry="14" fill="#fff" opacity=".5" transform="rotate(14 27 38)" />
+      </symbol>
+      <symbol id="i-milk" viewBox="0 0 80 100">
+        <ellipse cx="40" cy="96" rx="26" ry="3.5" fill="#000" opacity=".14" />
+        <path d="M10 6h60l-6 88H16L10 6Z" fill="#E6EEF1" stroke="#A8BAC0" stroke-width="2.5" stroke-linejoin="round" />
+        <path d="M12.500 22h55l-4 70H16.500L12.500 22Z" fill="#FFFDF7" />
+        <path d="M20 28l3 56" stroke="#fff" stroke-width="5" stroke-linecap="round" opacity=".9" />
+      </symbol>
+      <symbol id="i-paneer" viewBox="0 0 100 90">
+        <path d="M50 6 92 28v36L50 86 8 64V28L50 6Z" fill="#F2E9CF" />
+        <path d="M50 6 92 28 50 50 8 28 50 6Z" fill="#FFFDF2" />
+        <path d="M50 50 92 28v36L50 86V50Z" fill="#E2D5AE" />
+        <path d="M8 28 50 50 92 28" stroke="#CBBB8A" stroke-width="1.500" fill="none" />
+        <circle cx="40" cy="26" r="2.500" fill="#E7DBB8" />
+        <circle cx="60" cy="30" r="2" fill="#E7DBB8" />
+      </symbol>
+      <symbol id="i-dal" viewBox="0 0 100 80">
+        <path d="M6 28h88c0 30-18 48-44 48S6 58 6 28Z" fill="url(#g-steel)" />
+        <ellipse cx="50" cy="28" rx="44" ry="11" fill="#EBB43A" />
+        <ellipse cx="42" cy="27" rx="16" ry="3.500" fill="#F8D677" opacity=".85" />
+        <circle cx="68" cy="30" r="3" fill="#7BA05B" />
+        <circle cx="30" cy="31" r="2.500" fill="#C0392B" />
+      </symbol>
+      <symbol id="i-rajma" viewBox="0 0 100 80">
+        <path d="M6 28h88c0 30-18 48-44 48S6 58 6 28Z" fill="url(#g-steel)" />
+        <ellipse cx="50" cy="28" rx="44" ry="11" fill="#7E2616" />
+        <g fill="#C24A30">
+          <ellipse cx="30" cy="27" rx="5" ry="2.800" />
+          <ellipse cx="45" cy="31" rx="5" ry="2.800" />
+          <ellipse cx="60" cy="26" rx="5" ry="2.800" />
+          <ellipse cx="73" cy="30" rx="5" ry="2.800" />
+          <ellipse cx="52" cy="23" rx="4" ry="2.400" />
+        </g>
+      </symbol>
+      <symbol id="i-soya" viewBox="0 0 100 80">
+        <path d="M6 28h88c0 30-18 48-44 48S6 58 6 28Z" fill="url(#g-steel)" />
+        <ellipse cx="50" cy="28" rx="44" ry="11" fill="#8C5C2A" />
+        <g fill="#D8A86B">
+          <rect x="22" y="22" width="16" height="9" rx="4.500" transform="rotate(-12 30 26)" />
+          <rect x="42" y="24" width="18" height="9" rx="4.500" transform="rotate(8 51 28)" />
+          <rect x="62" y="22" width="15" height="9" rx="4.500" transform="rotate(-6 70 26)" />
+          <rect x="36" y="16" width="14" height="8" rx="4" transform="rotate(18 43 20)" />
+        </g>
+      </symbol>
+      <symbol id="i-pb" viewBox="0 0 120 50">
+        <rect x="2" y="21" width="72" height="9" rx="4.500" fill="url(#g-steel)" />
+        <ellipse cx="92" cy="25" rx="26" ry="19" fill="url(#g-steel)" />
+        <path d="M70 26c2-14 12-20 24-19 12 1 20 8 20 18-2 8-12 12-24 11-10 0-18-4-20-10Z" fill="#B8803F" />
+        <path d="M80 18c6-6 18-7 26-2" stroke="#E6B878" stroke-width="3.500" stroke-linecap="round" fill="none" />
+      </symbol>
+      <symbol id="i-roti" viewBox="0 0 120 44">
+        <ellipse cx="60" cy="27" rx="58" ry="14" fill="#BF8C4A" />
+        <ellipse cx="60" cy="21" rx="58" ry="16" fill="url(#g-roti)" />
+        <g fill="#A8692A" opacity=".7">
+          <ellipse cx="30" cy="19" rx="5" ry="2.600" />
+          <ellipse cx="58" cy="14" rx="6" ry="2.800" />
+          <ellipse cx="82" cy="22" rx="5" ry="2.600" />
+          <ellipse cx="46" cy="26" rx="4" ry="2" />
+          <ellipse cx="98" cy="18" rx="3.500" ry="2" />
+        </g>
+      </symbol>
+      <symbol id="i-roti-pg" viewBox="0 0 120 44">
+        <ellipse cx="60" cy="27" rx="58" ry="14" fill="#C8801E" />
+        <ellipse cx="60" cy="21" rx="58" ry="16" fill="url(#g-roti-pg)" />
+        <g fill="#8A5214" opacity=".65">
+          <ellipse cx="30" cy="19" rx="5" ry="2.600" />
+          <ellipse cx="58" cy="14" rx="6" ry="2.800" />
+          <ellipse cx="82" cy="22" rx="5" ry="2.600" />
+          <ellipse cx="46" cy="26" rx="4" ry="2" />
+          <ellipse cx="98" cy="18" rx="3.500" ry="2" />
+        </g>
+      </symbol>
+    </defs>
+  </svg>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ============ NAV ============ -->
+  <header class="nav" data-nav>
+    <div class="nav__inner">
+      <a class="nav__logo" href="#top" aria-label="ProGrain, home"><img src="assets/logo-dark.png" alt="ProGrain"
+          width="730" height="160"></a>
+      <nav class="nav__links" aria-label="Primary">
+        <a href="#why">Why ProGrain</a>
+        <a href="#how">How to use</a>
+        <a href="#protein">Protein maths</a>
+        <a href="#recipes">Recipes</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <a class="btn btn--small nav__cta" href="#waitlist-hero" data-focus-waitlist>Join waitlist</a>
+      <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu"
+        data-menu-toggle><span></span><span></span></button>
+    </div>
+    <nav class="nav__sheet" id="mobileMenu" aria-label="Mobile" hidden>
+      <a href="#why">Why ProGrain</a>
+      <a href="#how">How to use</a>
+      <a href="#protein">Protein maths</a>
+      <a href="#recipes">Recipes</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+  </header>
+
+  <main id="main">
+
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="top" data-hero>
+      <div class="hero__stage" data-stage>
+        <div class="hero__glow" aria-hidden="true"></div>
+            <div class="floor" aria-hidden="true"></div>
+    
+        <div class="hero__art" data-art aria-hidden="true">
+          <div class="pool"></div>
+          <div class="shadow shadow--soft" data-shadow-soft></div>
+          <div class="shadow shadow--contact" data-shadow-contact></div>
+          <div class="puffs" data-puffs></div>
+          <div class="bag" data-bag><img src="assets/sachet.png" alt="" width="804" height="1104" decoding="async"></div>
+        </div>
+
+        <div class="hero__copy">
+          <h1 class="hero__title"><span>Same roti.</span><span class="hero__title-2">3x protein.</span></h1>
+          <p class="hero__lede">ProGrain is a protein mix you knead into the atta you already buy. Same brand, same
+            tawa, same roti on the plate. Just three times the protein.</p>
+
+          <form class="waitlist" id="waitlist-hero" data-waitlist novalidate>
+            <div class="waitlist__row">
+              <label class="sr-only" for="email-hero">Email address</label>
+              <input id="email-hero" name="email" type="email" inputmode="email" autocomplete="email"
+                placeholder="Your email address" required aria-describedby="hero-note hero-msg">
+              <button class="btn" type="submit"><span>Join the waitlist</span></button>
+            </div>
+            <p class="waitlist__note" id="hero-note">Free to join. No payment, no card. Early members get a launch-day
+              discount.</p>
+            <p class="waitlist__msg" id="hero-msg" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+
+        <div class="hero__cue" data-cue aria-hidden="true"><span>Scroll</span><i></i></div>
+      </div>
+    </section>
+
+    <!-- ============ TICKER ============ -->
+    <div class="ticker" aria-hidden="true">
+      <div class="ticker__track">
+        <span>Waitlist open</span><i></i><span>No payment needed</span><i></i><span>Early-bird
+          pricing</span><i></i><span>Same roti. 3x protein.</span><i></i>
+        <span>Waitlist open</span><i></i><span>No payment needed</span><i></i><span>Early-bird
+          pricing</span><i></i><span>Same roti. 3x protein.</span><i></i>
+        <span>Waitlist open</span><i></i><span>No payment needed</span><i></i><span>Early-bird
+          pricing</span><i></i><span>Same roti. 3x protein.</span><i></i>
+      </div>
+    </div>
+
+    <!-- ============ WHY ============ -->
+    <section class="section why" id="why">
+      <div class="wrap">
+        <div class="why__head">
+          <h2 class="h2">Why ProGrain</h2>
+          <p class="lede">Protein, folded into the roti you already make.</p>
+        </div>
+
+        <div class="bento">
+          <article class="tile tile--char">
+            <div class="tile__text">
+              <h3>Just Wheat &amp; Soy</h3>
+              <p>No Whey, No Sugar, No Preservative - Just 2 Simple Ingredients</p>
+            </div>
+            <img class="tile__art tile__art--trio" src="assets/art/trio.svg" alt="" loading="lazy">
+          </article>
+
+          <article class="tile tile--power">
+            <div class="tile__text">
+              <h3>Better Nutrition</h3>
+              <p>Supports Muscle Growth &amp; Recovery, Keeps You Fuller for Longer</p>
+            </div>
+            <img class="tile__art tile__art--dumbbell" src="assets/art/dumbbell.svg" alt="" loading="lazy">
+          </article>
+
+          <article class="tile tile--amber">
+            <div class="tile__text">
+              <h3>Same Atta, No Habit Change</h3>
+              <p>No Need to buy a New Atta</p>
+            </div>
+            <img class="tile__art tile__art--bowl" src="assets/art/flour-bowl.svg" alt="" loading="lazy">
+          </article>
+
+          <article class="tile tile--sage">
+            <div class="tile__text">
+              <h3>Tear &amp; Add</h3>
+              <p>Hassle Free</p>
+            </div>
+            <img class="tile__art tile__art--sachet" src="assets/sachet.png" alt="" loading="lazy">
+          </article>
+
+          <article class="tile tile--milk">
+            <div class="tile__text">
+              <h3>Made for daily roti</h3>
+              <p>Protein in the food you already eat.</p>
+            </div>
+            <img class="tile__art tile__art--plate" src="assets/recipes/Roti.webp" alt="" loading="lazy">
+          </article>
+
+          <a class="tile tile--crust tile--link" href="#recipes">
+            <div class="tile__text">
+              <h3>One Mix, Many Dishes</h3>
+              <p class="tile__more">Check Out More <svg viewBox="0 0 20 20" aria-hidden="true">
+                  <path d="M4 10h11M11 5l5 5-5 5" />
+                </svg></p>
+            </div>
+            <img class="tile__art tile__art--plate2" src="assets/recipes/Parantha.webp" alt="" loading="lazy">
+          </a>
+
+          <article class="tile tile--paper">
+            <div class="tile__text">
+              <h3>High Quality Protein</h3>
+              <p>with all 9 Essential Amino Acids</p>
+            </div>
+            <img class="tile__art tile__art--aminos" src="assets/art/aminos.svg" alt="" loading="lazy">
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ HOW TO USE ============ -->
+    <section class="how" id="how">
+      <video class="how__video" data-video src="assets/direction-of-use.mp4" autoplay muted loop playsinline
+        preload="auto" disablepictureinpicture disableremoteplayback tabindex="-1"
+        aria-label="How to use ProGrain: add the sachet to your atta before kneading"></video>
+      <div class="how__shade" aria-hidden="true"></div>
+      <div class="wrap how__inner">
+        <div class="how__copy">
+          <h2 class="how__title">Just add the mix before kneading your atta<span aria-hidden="true">&hellip;.</span>
+          </h2>
+          <p class="how__done">That's it.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PROTEIN CALCULATOR ============ -->
+    <section class="section protein" id="protein">
+      <div class="wrap">
+        <div class="protein__head">
+          <h2 class="h2">What <span data-n-label>3 ProGrain rotis</span> add up to.</h2>
+          <p class="lede">The same protein, the long way round. Change the number of rotis and watch the plates.</p>
+        </div>
+
+        <div class="calc calc--mini" data-calc>
+      <div class="calc__panel">
+        <div class="stepper" role="group" aria-label="Number of ProGrain rotis">
+          <button type="button" class="stepper__btn" data-step="-1" aria-label="One less roti">&minus;</button>
+          <output class="stepper__val" data-n aria-live="polite">3</output>
+          <button type="button" class="stepper__btn" data-step="1" aria-label="One more roti">+</button>
+        </div>
+        <div class="calc__unit"><svg viewBox="0 0 120 44" aria-hidden="true"><use href="#i-roti-pg"/></svg><span>ProGrain<br>rotis</span></div>
+        <p class="calc__total"><b data-total>24</b><span>g protein<small>is the same as&hellip;</small></span></p>
+      </div>
+      <div class="calc__grid" data-grid></div>
+    </div>
+    <p class="fineprint">Typical values for common foods. ProGrain's protein per roti is a formulation target until
+          lab results are in.</p>
+      </div>
+    </section>
+
+    <!-- ============ RECIPES ============ -->
+    <section class="section recipes" id="recipes" data-recipes>
+  <div class="recipes__sticky">
+        <div class="wrap recipes__head">
+          <h2 class="h2">Eat it your way.</h2>
+          <p class="lede">From a plain phulka to cookies. Scroll or swipe through the plates.</p>
+        </div>
+        <div id="plateCarouselMount"></div>
+        <p class="fineprint recipes__note">Protein per serving is an estimate until lab testing is complete.</p>
+      </section>
+  </div>
+</section>
+
+    <!-- ============ FAQ ============ -->
+    <section class="section faq" id="faq">
+      <div class="wrap faq__grid">
+        <div class="faq__intro">
+          <h2 class="h2">Questions, answered.</h2>
+          <p class="lede">Something missing? Join the list and reply to our first email. We read every one.</p>
+        </div>
+        <div class="faq__list">
+          <details open>
+            <summary>Do I still need my regular atta?</summary>
+            <p>Yes, and that's the idea. ProGrain is an add-in, not a replacement. You knead one sachet into your usual
+              atta, so you keep the brand and the taste your family already likes.</p>
+          </details>
+          <details>
+            <summary>Will it change the taste or texture of my roti?</summary>
+            <p>We built the recipe so your roti still rolls, puffs and tastes like roti. Taste is personal though, so
+              we'll share sampling details with the waitlist before launch.</p>
+          </details>
+          <details>
+            <summary>How much protein does it add?</summary>
+            <p>Our target is about 8 g per roti, roughly three times a plain whole wheat roti. That is a target until
+              independent lab results are in. We'll publish the full nutrition panel once they are.</p>
+          </details>
+          <details>
+            <summary>Is it safe for my dietary needs?</summary>
+            <p>ProGrain contains wheat (gluten) and soy, so it is not suitable if you are allergic to either. The final
+              allergen list will be on the pack. If you have diabetes, kidney conditions or any medical diet, please
+              check with your doctor first.</p>
+          </details>
+          <details>
+            <summary>Do I have to pay to join the waitlist?</summary>
+            <p>No. Joining is free and you won't be asked for payment details. You'll get an email when we launch, with
+              your early-bird discount.</p>
+          </details>
+          <details>
+            <summary>When does ProGrain launch?</summary>
+            <p>We're finishing licensing, lab testing and packaging. Waitlist members hear first, and we'll share a date
+              as soon as it's firm.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FINAL CTA ============ -->
+    <section class="cta" id="join">
+      <img class="cta__sachet" src="assets/sachet.png" alt="" loading="lazy">
+      <div class="wrap cta__inner">
+        <h2 class="cta__title">Be first to roll with it.</h2>
+        <p class="cta__sub">Join the waitlist and we'll send your early-bird discount the day ProGrain launches. Nothing
+          to pay today.</p>
+        <form class="waitlist waitlist--light" id="waitlist-cta" data-waitlist novalidate>
+          <div class="waitlist__row">
+            <label class="sr-only" for="email-cta">Email address</label>
+            <input id="email-cta" name="email" type="email" inputmode="email" autocomplete="email"
+              placeholder="Your email address" required aria-describedby="cta-msg">
+            <button class="btn btn--dark" type="submit"><span>Join the waitlist</span></button>
+          </div>
+          <p class="waitlist__msg" id="cta-msg" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer__inner">
+      <img src="assets/logo-dark.png" alt="ProGrain" width="730" height="160">
+      <p>Same roti. 3x protein.</p>
+      <p class="footer__legal">&copy; 2026 ProGrain. Pre-launch.
+        <!-- TODO: FSSAI licence no. and contact details once issued -->
+      </p>
+    </div>
+  </footer>
+
+  <script src="js/protein-data.js"></script>
+  <script src="PlateCarousel/PlateCarousel.js"></script>
+  <script src="js/hero.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>
