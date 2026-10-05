@@ -212,12 +212,6 @@ button, input { font: inherit; color: inherit; }
 }
 @media (orientation: landscape) { .hero__copy { width: min(700px, 57%); } }
 
-/* ---------- Ticker ---------- */
-.ticker { background: var(--amber); color: var(--ink); overflow: hidden; padding: 14px 0; border-block: 1px solid rgba(0, 0, 0, .15); }
-.ticker__track { display: flex; width: max-content; align-items: center; gap: 28px; animation: tick 34s linear infinite; font-family: var(--font-display); font-weight: 700; font-stretch: 88%; font-size: 1.15rem; letter-spacing: -.01em; white-space: nowrap; padding-left: 28px; }
-.ticker i { width: 10px; height: 10px; border-radius: 50% 0 50% 0; background: var(--ink); transform: rotate(45deg); flex: none; }
-@keyframes tick { to { transform: translateX(-33.333%); } }
-
 /* ---------- Why: bento ---------- */
 .why__head { max-width: 760px; }
 .why__head .lede { font-size: clamp(1.15rem, 2vw, 1.5rem); font-family: var(--font-display); font-weight: 500; color: var(--crust); }
@@ -302,19 +296,21 @@ button, input { font: inherit; color: inherit; }
 
 
 /* ---------- Calculator: compact version (single icon per food) ---------- */
-.calc--mini .calc__panel { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 28px; padding: 14px 28px 14px 14px; border-radius: 999px; text-align: left; }
+.calc--mini .calc__panel { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 28px; padding: 12px 32px 12px 16px; border-radius: 999px; text-align: left; }
 .calc--mini .stepper__btn { width: 48px; height: 48px; font-size: 1.6rem; }
 .calc--mini .stepper__val { font-size: 2.4rem; }
 .calc__unit { display: flex; align-items: center; gap: 14px; margin-right: auto; font-family: var(--font-display); font-weight: 700; font-size: 1.05rem; line-height: 1.1; }
-.calc__unit svg { width: 84px; height: 31px; filter: drop-shadow(0 3px 4px rgba(0, 0, 0, .4)); }
+.calc__unit svg { width: 76px; height: 76px; flex: none; overflow: visible; filter: drop-shadow(0 3px 4px rgba(0, 0, 0, .45)); }
+.calc__eq { margin: 12px 0 0; text-align: center; font-family: var(--font-display); font-weight: 600; font-size: .95rem; color: var(--ink-soft); }
 .calc--mini .calc__total { justify-self: auto; }
 .calc--mini .calc__total b { font-size: clamp(2.8rem, 4.4vw, 3.8rem); line-height: .9; }
 .calc--mini .calc__total span { font-size: 1.05rem; }
 .calc--mini .calc__total small { font-size: .85rem; margin-top: 2px; }
-.calc--mini .calc__grid { grid-template-columns: repeat(8, minmax(0, 1fr)); gap: 12px; margin-top: 14px; }
+.calc--mini .calc__grid { grid-template-columns: repeat(8, minmax(0, 1fr)); gap: 12px; margin-top: 8px; }
 .mini { aspect-ratio: 1; background: var(--milk); border-radius: 22px; padding: 12px 8px 10px; display: flex; flex-direction: column; align-items: center; text-align: center; box-shadow: inset 0 0 0 1px rgba(27, 18, 10, .07), 0 12px 24px -20px rgba(27, 18, 10, .5); transition: transform .3s var(--ease); }
 .mini:hover { transform: translateY(-3px); }
 .mini__icon { flex: 1 1 0; min-height: 0; width: 100%; max-width: 76%; overflow: visible; filter: drop-shadow(0 3px 3px rgba(27, 18, 10, .18)); animation: pop .4s var(--ease) backwards; }
+.mini__photo { object-fit: contain; max-width: 88%; filter: drop-shadow(0 4px 5px rgba(27, 18, 10, .22)); }
 .mini__count { font-family: var(--font-display); font-weight: 800; font-stretch: 92%; font-size: clamp(1.7rem, 2.3vw, 2.2rem); line-height: 1; letter-spacing: -.03em; color: var(--ink); font-variant-numeric: tabular-nums; margin-top: 6px; }
 .mini__count small { font-size: .5em; margin-left: 2px; letter-spacing: 0; }
 .mini__name { font-family: var(--font-display); font-weight: 600; font-size: .8rem; line-height: 1.15; color: var(--ink-soft); margin-top: 3px; }

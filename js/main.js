@@ -91,6 +91,7 @@
     const nEl = $('[data-n]', calc);
     const totalEl = $('[data-total]', calc);
     const labelEl = $('[data-n-label]');
+    const cluster = $('[data-cluster]', calc);
     let n = cfg.defaultRotis;
 
     const amount = (it, protein) => {
@@ -103,6 +104,14 @@
       nEl.textContent = n;
       totalEl.textContent = Number.isInteger(protein) ? protein : protein.toFixed(1);
       labelEl.textContent = `${n} ProGrain ${n === 1 ? 'roti' : 'rotis'}`;
+      // roti cluster: 1 point, 2 line, 3 triangle, 4 square, 5 pentagon, 6 hexagon
+      const SHAPE = { 1: [60, 0, 0], 2: [44, 24, 180], 3: [42, 26, -90], 4: [36, 27, -45], 5: [33, 30, -90], 6: [30, 32, -90] };
+      const [d, R, start] = SHAPE[Math.min(6, Math.max(1, n))];
+      cluster.innerHTML = Array.from({ length: n }, (_, i) => {
+        const ang = (start + (360 / n) * i) * Math.PI / 180;
+        const x = 50 + R * Math.cos(ang) - d / 2, y = 50 + R * Math.sin(ang) - d / 2;
+        return `<use href="#i-roti-pg" x="${x.toFixed(1)}" y="${y.toFixed(1)}" width="${d}" height="${d}"/>`;
+      }).join('');
       $$('[data-step]', calc).forEach(b => {
         const d = +b.dataset.step;
         b.disabled = (d < 0 && n <= cfg.minRotis) || (d > 0 && n >= cfg.maxRotis);
@@ -115,7 +124,9 @@
         const vb = document.getElementById(it.icon).getAttribute('viewBox');
         return `
           <article class="mini" title="${it.note || ''}">
-            <svg class="mini__icon" viewBox="${vb}" role="img" aria-label="${it.name}"><use href="#${it.icon}"/></svg>
+            ${cfg.photos && it.photo
+              ? `<img class="mini__icon mini__photo" src="${it.photo}" alt="${it.name}" loading="lazy">`
+              : `<svg class="mini__icon" viewBox="${vb}" role="img" aria-label="${it.name}"><use href="#${it.icon}"/></svg>`}
             <p class="mini__count">${count}${it.grams ? '<small>g</small>' : ''}</p>
             <h3 class="mini__name">${label}</h3>
           </article>`;

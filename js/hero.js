@@ -77,13 +77,10 @@
 
   let lastT = 0, lastPuff = 0;
   function maybePuff(t) {
-    if (lastT < FIRST_IMPACT && t >= FIRST_IMPACT && performance.now() - lastPuff > 800) {
-      lastPuff = performance.now();
-      puff();
-    }
     lastT = t;
   }
 
+  // Flour puff on landing removed: it read as fake. Kept (unused) in case it is wanted again.
   function puff() {
     if (reduceMQ.matches) return;
     const n = 9;
