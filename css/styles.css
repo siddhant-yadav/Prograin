@@ -241,9 +241,9 @@ button, input { font: inherit; color: inherit; }
 .tile .tile__more { display: inline-flex; align-items: center; gap: 8px; margin-top: 14px; padding: 8px 16px; border-radius: 999px; background: var(--amber); color: var(--ink); font-family: var(--font-display); font-weight: 700; font-size: .95rem; opacity: 1; transition: gap .3s var(--ease); }
 .tile__more svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
 .tile--link:hover .tile__more { gap: 14px; }
-.tile--amber .tile__art--bowl { right: -12%; bottom: -4%; width: 104%; }
+.tile--amber .tile__art--bowl { right: -4%; bottom: -5%; width: 86%; filter: drop-shadow(-6px 14px 14px rgba(70, 35, 0, .4)); --hover: scale(1.04) rotate(-2deg); }
 .tile--sage .tile__art--sachet { right: 6%; bottom: -22%; width: 62%; transform: rotate(8deg); --hover: rotate(4deg) translateY(-6px); filter: drop-shadow(-10px 18px 18px rgba(40, 50, 30, .45)); }
-.tile--char .tile__art--trio { right: 0; bottom: -6%; width: min(62%, 560px); }
+.tile--char .tile__art--trio { right: 2%; bottom: 3%; width: min(62%, 580px); filter: drop-shadow(0 16px 18px rgba(0, 0, 0, .55)); --hover: scale(1.04) rotate(-1.5deg); }
 .tile--milk .tile__art--plate { right: -26%; bottom: -34%; width: 112%; filter: drop-shadow(-10px 18px 18px rgba(27, 18, 10, .3)); --hover: rotate(8deg) scale(1.03); }
 .tile--crust .tile__art--plate2 { right: -26%; bottom: -34%; width: 112%; filter: drop-shadow(-10px 18px 18px rgba(0, 0, 0, .5)); --hover: rotate(-8deg) scale(1.03); }
 .tile--paper .tile__art--aminos { right: 2%; bottom: 0; width: 96%; }
