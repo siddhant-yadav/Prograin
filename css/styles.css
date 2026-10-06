@@ -180,12 +180,11 @@ button, input { font: inherit; color: inherit; }
 
 /* hero: portrait (phones, tablets held upright) — sachet falls with scroll, behind the copy */
 @media (orientation: portrait) {
-  .hero { height: 270svh; }
   .hero__stage {
     --ground-h: clamp(100px, 17svh, 180px);
     --art-h: clamp(190px, 31svh, 400px);
-    position: sticky; top: 0; height: 100svh; min-height: 0;
-    display: block; padding: calc(var(--nav-h) + 6px) var(--gutter) 0;
+    min-height: 100svh; display: block;
+    padding: calc(var(--nav-h) + 6px) var(--gutter) calc(var(--art-h) + var(--ground-h) * .44 + 28px);
   }
   .hero__copy { margin-inline: auto; width: min(660px, 100%); }
   .hero__title { font-size: clamp(3rem, 15vw, 6rem); }
@@ -197,14 +196,7 @@ button, input { font: inherit; color: inherit; }
   .waitlist__note { margin-top: 10px; font-size: .92rem; line-height: 1.4; }
   .waitlist__msg { min-height: 0; margin-top: 4px; }
   .hero__art { right: auto; left: 0; inset-inline: 0; margin-inline: auto; width: calc(var(--art-h) * 804 / 1104); bottom: calc(var(--ground-h) * .44); }
-  .hero__cue {
-    display: flex; flex-direction: column; align-items: center; gap: 8px; z-index: 4;
-    position: absolute; left: 50%; bottom: calc(var(--ground-h) * .44 + var(--art-h) * .4); transform: translateX(-50%);
-    font-family: var(--font-display); font-weight: 600; font-size: .85rem; color: var(--gold);
-  }
-  .hero__cue i { width: 2px; height: 34px; background: linear-gradient(var(--gold), transparent); border-radius: 2px; animation: cue 1.6s ease-in-out infinite; transform-origin: top; }
 }
-@keyframes cue { 0%, 100% { transform: scaleY(.4); opacity: .4; } 50% { transform: scaleY(1); opacity: 1; } }
 @media (orientation: portrait) and (max-height: 720px) {
   .hero__title { font-size: clamp(2.6rem, 12.5vw, 4.2rem); }
   .hero__lede { font-size: .98rem; margin-top: .7rem; }
@@ -327,6 +319,27 @@ button, input { font: inherit; color: inherit; }
   .mini__name { font-size: .85rem; }
 }
 
+
+/* Phone variants for the calculator tiles (<= 640px). Desktop and tablet are unchanged.
+   calc--v1: 4 + 4 small tiles.  calc--v2: one slim row per food. Chosen with ?calc=grid / ?calc=list for now. */
+.mini__name .n-short, .mini__name .n-unit { display: none; }
+@media (max-width: 640px) {
+  .calc--v1 .calc__grid { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; }
+  .calc--v1 .mini { aspect-ratio: auto; padding: 10px 3px 9px; border-radius: 16px; }
+  .calc--v1 .mini__icon { flex: none; width: 100%; max-width: 82%; height: 38px; }
+  .calc--v1 .mini__count { font-size: 1.3rem; margin-top: 6px; }
+  .calc--v1 .mini__name .n-full { display: none; }
+  .calc--v1 .mini__name .n-short { display: block; font-size: .72rem; font-weight: 700; color: var(--ink); line-height: 1.1; }
+  .calc--v1 .mini__name .n-unit { display: block; font-size: .64rem; font-weight: 600; color: var(--ink-soft); line-height: 1.1; margin-top: 1px; }
+  .calc--v1 .mini__name { margin-top: 3px; }
+
+  .calc--v2 .calc__grid { grid-template-columns: 1fr; gap: 8px; }
+  .calc--v2 .mini { aspect-ratio: auto; display: grid; grid-template-columns: 48px 1fr auto; align-items: center; gap: 12px; text-align: left; padding: 8px 18px 8px 12px; border-radius: 18px; min-height: 58px; }
+  .calc--v2 .mini__icon { grid-column: 1; grid-row: 1; width: 44px; max-width: none; height: 40px; flex: none; }
+  .calc--v2 .mini__name { grid-column: 2; grid-row: 1; margin: 0; font-size: 1rem; font-weight: 600; color: var(--ink); }
+  .calc--v2 .mini__count { grid-column: 3; grid-row: 1; margin: 0; font-size: 1.7rem; }
+}
+
 /* ---------- Recipes ---------- */
 .recipes { background: var(--char); color: var(--cream); padding-bottom: clamp(48px, 6vw, 90px); overflow: clip; isolation: isolate; }
 .recipes__sticky::before { content: ''; position: absolute; left: 50%; top: 52%; width: 90vw; aspect-ratio: 1; transform: translate(-50%, -50%); background: radial-gradient(circle, rgba(245, 169, 74, .2), transparent 62%); pointer-events: none; z-index: 0; }
@@ -354,18 +367,27 @@ button, input { font: inherit; color: inherit; }
    from plate 1 to plate 6 before the page continues. Touch devices skip this and swipe instead. */
 @media (hover: hover) and (pointer: fine) {
   .recipes { --steps: 6; padding: 0; height: calc(100svh + var(--steps) * 55svh); }
-  .recipes__sticky { position: sticky; top: 0; height: 100svh; display: flex; flex-direction: column; justify-content: center; padding-top: var(--nav-h); overflow: clip; }
+  .recipes { --peek: 84px; }
+  .recipes__sticky { position: sticky; top: 0; height: 100svh; padding-bottom: var(--peek); display: flex; flex-direction: column; justify-content: center; padding-top: var(--nav-h); overflow: clip; }
   .recipes .h2 { font-size: clamp(2.2rem, 4.2vw, 3.6rem); }
   .recipes .lede { margin-top: .5rem; }
   .recipes__head { margin-bottom: 0; }
-  .recipes .lpc-scene { height: min(44svh, 470px); min-height: 300px; }
-  .recipes .lpc-plate-wrapper { width: min(38vh, 400px); height: min(38vh, 400px); min-width: 260px; min-height: 260px; margin-top: calc(min(38vh, 400px) / -2); }
+  .recipes .lpc-scene { height: min(40svh, 430px); min-height: 280px; }
+  .recipes .lpc-plate-wrapper { width: min(34vh, 360px); height: min(34vh, 360px); min-width: 240px; min-height: 240px; margin-top: calc(min(34vh, 360px) / -2); }
+  /* a strip of the next (cream) section stays visible while the plates are pinned, so the page doesn't look like it ends here */
+  .recipes__peek { position: absolute; left: 0; right: 0; bottom: 0; z-index: 6; height: var(--peek); display: flex; align-items: center; justify-content: center; gap: 12px; margin-top: 0; background: var(--cream); color: var(--ink); border-radius: 30px 30px 0 0; box-shadow: 0 -18px 40px -12px rgba(0, 0, 0, .55); text-decoration: none; font-family: var(--font-display); font-weight: 700; font-stretch: 94%; font-size: 1.2rem; letter-spacing: -.02em; }
+  .recipes__peek svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; transition: transform .3s var(--ease); }
+  .recipes__peek:hover svg { transform: translateY(3px); }
   .recipes .lpc-info-panel { margin: .9rem auto .4rem; }
   .recipes .lpc-controls { margin-top: .4rem; }
   .recipes .fineprint { margin-top: 10px; }
   .recipes__progress { display: none; }
 }
-@media (hover: none), (pointer: coarse) { #plateCarouselMount { touch-action: pan-y; } }
+@media (hover: none), (pointer: coarse) {
+  .recipes__peek { display: none; }
+  #plateCarouselMount { touch-action: pan-y; }
+  .recipes .lpc-nav-btn { display: none; }   /* touch: swipe instead of arrow buttons; the dots stay */
+}
 
 /* ---------- FAQ ---------- */
 .faq__grid { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 7fr); gap: clamp(36px, 7vw, 110px); align-items: start; }

@@ -95,6 +95,9 @@
     const cluster = $('[data-cluster]', calc);
     let n = cfg.defaultRotis;
 
+    // Phone layout under review: ?calc=grid (4 + 4 small tiles) or ?calc=list (one row per food). Default: grid.
+    calc.classList.add(new URLSearchParams(location.search).get('calc') === 'list' ? 'calc--v2' : 'calc--v1');
+
     const amount = (it, protein) => {
       const raw = protein / it.proteinPerUnit;
       return it.grams ? Math.max(5, Math.round(raw / 5) * 5) : Math.max(0.5, Math.round(raw * 2) / 2);
@@ -129,7 +132,7 @@
               ? `<img class="mini__icon mini__photo" src="${it.photo}" alt="${it.name}" loading="lazy">`
               : `<svg class="mini__icon" viewBox="${vb}" role="img" aria-label="${it.name}"><use href="#${it.icon}"/></svg>`}
             <p class="mini__count">${count}${it.grams ? '<small>g</small>' : ''}</p>
-            <h3 class="mini__name">${label}</h3>
+            <h3 class="mini__name"><span class="n-full">${label}</span><span class="n-short">${it.short || it.name}</span>${it.unitShort && !it.grams ? `<small class="n-unit">${it.unitShort}</small>` : ''}</h3>
           </article>`;
       }).join('');
     }
@@ -198,8 +201,23 @@
         goToPlate(carousel.currentIndex + (e.key === 'ArrowRight' ? 1 : -1));
       }, true);
     } else {
-      let x0 = 0, y0 = 0;
-      mount.addEventListener('touchstart', e => { x0 = e.touches[0].clientX; y0 = e.touches[0].clientY; }, { passive: true });
+      let x0 = 0, y0 = 0, touched = false;
+      mount.addEventListener('touchstart', e => { touched = true; x0 = e.touches[0].clientX; y0 = e.touches[0].clientY; }, { passive: true });
+
+      // One small wiggle the first time the plates come into view, so people know they can swipe.
+      if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        const io = new IntersectionObserver(([en]) => {
+          if (!en.isIntersecting) return;
+          io.disconnect();
+          const base = carousel.targetX;
+          const steps = [[90, 0], [0, 650], [45, 1300], [0, 1850]];
+          steps.forEach(([dx, at]) => setTimeout(() => {
+            if (touched || carousel.currentIndex !== 0) return;
+            carousel.targetX = base + dx;
+          }, at + 350));
+        }, { threshold: 0.6 });
+        io.observe(mount);
+      }
       mount.addEventListener('touchend', e => {
         const dx = e.changedTouches[0].clientX - x0, dy = e.changedTouches[0].clientY - y0;
         if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy) * 1.4) dx < 0 ? carousel.next() : carousel.prev();

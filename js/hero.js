@@ -1,7 +1,7 @@
 /**
  * Hero: falling bag of ProGrain atta.
  * - Landscape: plays once on load (real time), bag lands to the right of the copy.
- * - Portrait: scroll-scrubbed. The bag drops from the top, behind the copy, as the page scrolls.
+ * - Portrait: the same timed drop, from the top of the hero, behind the copy (no scroll-scrubbing).
  * Both modes sample one physics trajectory (gravity + two damped bounces + squash + sway).
  */
 (() => {
@@ -121,7 +121,7 @@
 
   /* ---------- modes ---------- */
   let raf = 0, startTimer = 0;
-  function stop() { cancelAnimationFrame(raf); clearTimeout(startTimer); window.removeEventListener('scroll', onScroll); }
+  function stop() { cancelAnimationFrame(raf); clearTimeout(startTimer); }
 
   function landscapeMode() {
     measure();
@@ -139,33 +139,18 @@
     startTimer = setTimeout(begin, 450);
   }
 
-  function onScroll() {
-    const r = hero.getBoundingClientRect();
-    const span = Math.max(1, hero.offsetHeight - window.innerHeight);
-    const p = clamp(-r.top / span);
-    const t = p < 0.58 ? (p / 0.58) * FIRST_IMPACT : FIRST_IMPACT + clamp((p - 0.58) / 0.32) * (END - FIRST_IMPACT);
-    render(t); maybePuff(t);
-    if (cue) cue.style.opacity = clamp(1 - p * 7);
-  }
-
-  function portraitMode() {
-    measure();
-    window.addEventListener('scroll', onScroll, { passive: true });
-    onScroll();
-  }
-
   function start() {
     stop();
     lastT = 0;
     if (cue) cue.style.opacity = '';
     if (reduceMQ.matches) { measure(); render(END); if (cue) cue.style.display = 'none'; return; }
-    portraitMQ.matches ? portraitMode() : landscapeMode();
+    landscapeMode(); // same timed drop on every screen: plays once on load, no scroll-scrubbing
   }
 
   let rz;
   window.addEventListener('resize', () => {
     clearTimeout(rz);
-    rz = setTimeout(() => { measure(); portraitMQ.matches ? onScroll() : (lastT >= END && render(END)); }, 120);
+    rz = setTimeout(() => { measure(); if (lastT >= END) render(END); }, 120);
   });
   portraitMQ.addEventListener('change', start);
   reduceMQ.addEventListener('change', start);

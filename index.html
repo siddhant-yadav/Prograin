@@ -162,16 +162,12 @@
             <div class="waitlist__row">
               <label class="sr-only" for="email-hero">Email address</label>
               <input id="email-hero" name="email" type="email" inputmode="email" autocomplete="email"
-                placeholder="Your email address" required aria-describedby="hero-note hero-msg">
+                placeholder="Your email address" required aria-describedby="hero-msg">
               <button class="btn" type="submit"><span>Join the waitlist</span></button>
             </div>
-            <p class="waitlist__note" id="hero-note">Free to join. No payment, no card. Early members get a launch-day
-              discount. We only use your email to tell you about ProGrain's launch.</p>
             <p class="waitlist__msg" id="hero-msg" role="status" aria-live="polite"></p>
           </form>
         </div>
-
-        <div class="hero__cue" data-cue aria-hidden="true"><span>Scroll</span><i></i></div>
       </div>
     </section>
 
@@ -288,14 +284,19 @@
 
     <!-- ============ RECIPES ============ -->
     <section class="section recipes" id="recipes" data-recipes>
-  <div class="recipes__sticky">
+      <div class="recipes__sticky">
         <div class="wrap recipes__head">
           <h2 class="h2">Eat it your way.</h2>
           <p class="lede">From a plain phulka to cookies. Scroll or swipe through the plates.</p>
         </div>
         <div id="plateCarouselMount"></div>
         <p class="fineprint recipes__note">Protein per serving is an estimate until lab testing is complete.</p>
-      </section>
+        <a class="recipes__peek" href="#faq" aria-label="Skip to the FAQ">
+          <span>Questions, answered.</span>
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 8l5 5 5-5"/></svg>
+        </a>
+      </div>
+    </section>
   </div>
 </section>
 
